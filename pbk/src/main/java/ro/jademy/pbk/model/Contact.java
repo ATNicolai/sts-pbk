@@ -5,10 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "tb_contact")
 public class Contact {
 
+	//@JsonIgnore
 	@Id
 	@GeneratedValue
 	private long id;

@@ -2,27 +2,14 @@ package ro.jademy.pbk.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import ro.jademy.pbk.dao.ContactDao;
 import ro.jademy.pbk.model.Contact;
 
-@Service
-public class ContactService {
+public interface ContactService {
+	
+	Contact createContact(Contact contact);
+	
+	void deleteContact(Long id);
+	
+	List<Contact> retrieveContacts ();
 
-	@Autowired
-	ContactDao contactDao;
-	
-	
-	public List<Contact> getAllContacts(){
-		return (List<Contact>) contactDao.findAll();
-	}
-	
-	public void addContact(Contact contact){
-		contactDao.save(contact);
-	}
-	
-	
-	
 }
